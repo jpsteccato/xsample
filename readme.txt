@@ -48,7 +48,22 @@ BUILDING XSAMPLE from source
 
 You will need the flext C++ layer for PD and Max/MSP externals to compile this.
 See http://grrrr.org/ext/flext
+
 Download and unzip, or git-clone the package.
+1. `git clone --recurse-submodules https://github.com/jpsteccato/xsample.git`
+
+Build for OSX:
+1. `mkdir build-mac`
+2. `cd build-mac`
+3. `cmake .. -Wno-dev`
+4. `make`
+
+Build for Windows:
+1. `brew install mingw-w64`
+2. `mkdir build-win`
+3. `cd build-win`
+4. `cmake .. -Wno-dev -DCMAKE_TOOLCHAIN_FILE=WindowsToolchain.cmake` 
+5. `make`
 
 
 Pure data - any platform supporting gcc-compatible compilers
