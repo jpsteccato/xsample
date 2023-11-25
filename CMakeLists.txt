@@ -2,17 +2,21 @@
 # depends on max-sdk-base to be present
 #
 # mkdir build && cd build
-# cmake .. -Wno-dev FLEXT_DIR=../flext
+# cmake .. -Wno-dev
 # make
 
 cmake_minimum_required(VERSION 3.0)
+project(xsample)
+
+set(CMAKE_OSX_ARCHITECTURES x86_64;arm64)
 
 file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
 
-# output to current folder
-set(C74_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
+# output to maxmsp folder
+set(C74_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/maxmsp)
 
 set(C74_MAX_API_DIR ${CMAKE_CURRENT_SOURCE_DIR}/max-sdk-base)
+set(FLEXT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/flext)
 
 include(${C74_MAX_API_DIR}/script/max-pretarget.cmake)
 
