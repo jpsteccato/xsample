@@ -1,5 +1,7 @@
 .*
 build
+build-mac
+build-win
 
 # Compiled Object files
 *.slo
